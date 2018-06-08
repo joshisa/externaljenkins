@@ -10,11 +10,7 @@ pipeline {
         // more information about the kubernetesDeploy function and it's configs.
         stage("Deploy default@mycluster.icp") {
             steps {
-                kubernetesDeploy (configs: '/home/ubuntu/templates/*.yaml', 
-                                  kubeconfigId: 'icp-config', 
-                                  secretName: 'my-docker-registry',
-                                  secretNamespace: 'default',
-                                 )
+                sh 'docker info'
             }
         }
     }
