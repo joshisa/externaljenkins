@@ -1,3 +1,6 @@
-FROM node:7-alpine
+FROM nginx:alpine
 
-RUN apk add -U subversion
+COPY default.conf /etc/nginx/conf.d/default.conf
+COPY index.html /usr/share/nginx/html
+COPY health /usr/share/nginx/html
+COPY scm-source.json /
