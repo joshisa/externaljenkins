@@ -1,16 +1,10 @@
 pipeline {
-    agent { docker { image 'node:6.3' } }
+    agent { dockerfile true }
     stages {
-        stage('build') {
+        stage('Test') {
             steps {
-                sh 'npm --version'
-            }
-        }
-        // Deploy the application to Kubernetes. See the Jenkins Utility repo for
-        // more information about the kubernetesDeploy function and it's configs.
-        stage("Deploy default@mycluster.icp") {
-            steps {
-                sh 'docker info'
+                sh 'node --version'
+                sh 'svn --version'
             }
         }
     }
