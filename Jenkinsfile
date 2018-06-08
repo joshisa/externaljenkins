@@ -5,7 +5,7 @@ pipeline {
             steps {
                 echo 'Hello World'
                 script {
-                    sh "sudo echo '10.10.25.49 mycluster.icp' >> /etc/hosts"
+                    sh 'docker login -u admin -p admin "https://mycluster.icp:8500"'
                 }
             }
         }
