@@ -15,5 +15,5 @@ node {
     sh("kubectl config set-context kubectl --user=user")
     sh("kubectl config use-context kubectl")    
     sh("kubectl cluster-info")
-    sh("kubectl apply -f setup/hello.yaml")
+    sh("kubectl apply -f setup/hello.yml")
 }
