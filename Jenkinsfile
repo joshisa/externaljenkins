@@ -4,7 +4,7 @@ pipeline {
         stage('Example') {
             steps {
                 echo 'Hello World'
-                sh 'setup/remote-docker-login.sh 10.10.25.49'
+                sudo sh 'setup/remote-docker-login.sh 10.10.25.49'
             }
         }
     }
