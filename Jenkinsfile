@@ -5,7 +5,7 @@ pipeline {
             steps {
                 sh 'node --version'
                 sh 'svn --version'
-                sh 'docker login -u admin -p admin https://mycluster.icp:8500
+                sh 'docker login -u admin -p admin https://mycluster.icp:8500'
             }
         }
     }
