@@ -1,5 +1,5 @@
 pipeline {
-    properties([
+    options([
       parameters([
         string(
           name: 'K8S_CLUSTER',
