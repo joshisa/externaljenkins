@@ -1,7 +1,7 @@
 node {
     checkout scm
 
-    docker.withRegistry('https://mycluster.icp:8500', 'mycluster.icp.docker.cred') {
+    docker.withRegistry('https://mycluster.icp:8500', $docker) {
 
         def customImage = docker.build("my-image:${env.BUILD_ID}")
 
