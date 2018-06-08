@@ -2,7 +2,7 @@
 
 node {
    stage('Deploy') {
-      kubernetesDeploy (configs: 'k8s/dev/**', 
+      kubernetesDeploy (configs: '**/setup/**', 
                                   kubeconfigId: 'icp-config', 
                                   secretName: 'my-docker-registry',
                                   secretNamespace: 'default'
