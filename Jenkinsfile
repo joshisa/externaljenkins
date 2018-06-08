@@ -2,7 +2,7 @@
 
 node {
    stage('Deploy') {
-      kubernetesDeploy (configs: '/home/ubuntu/templates/*', 
+      kubernetesDeploy (configs: 'home/ubuntu/templates/**', 
                                   kubeconfigId: 'icp-config', 
                                   secretName: 'my-docker-registry',
                                   secretNamespace: 'default'
