@@ -3,7 +3,9 @@ kind: Deployment
 metadata:
   labels:
     app: nginxhello
+    build: jenkins-deploy
   name: nginxhello
+  namespace: default
 spec:
   replicas: 1
   template:
