@@ -4,7 +4,8 @@ pipeline {
         stage('Example') {
             steps {
                 echo 'Hello World'
-                sh 'setup/remote-docker-login.sh 10.10.25.49'
+                sh 'chmod +x $WORKSPACE/setup/remote-docker-login.sh'
+                sh '$WORKSPACE/setup/remote-docker-login.sh 10.10.25.49'
             }
         }
     }
