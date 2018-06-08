@@ -7,7 +7,5 @@ node {
                                   secretName: 'my-docker-registry',
                                   secretNamespace: 'default'
                        )
-
-      input "ask something"
       }
 }
