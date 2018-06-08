@@ -2,10 +2,11 @@
 
 node {
    stage('Deploy') {
-      kubernetesDeploy(
-         kubeconfigId: "icp-config",
-         configs: "config.yaml",
-         dockerCredentials: [[credentialsId: 'mycluster.icp.docker.cred']])
+      kubernetesDeploy (configs: '/home/ubuntu/templates/*.yaml', 
+                                  kubeconfigId: 'icp-config', 
+                                  secretName: 'my-docker-registry',
+                                  secretNamespace: 'default'
+                       )
 
       input "ask something"
       }
