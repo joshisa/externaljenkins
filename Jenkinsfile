@@ -18,6 +18,6 @@ node {
     sh("kubectl delete -f setup/hello.yml")
     sh("kubectl delete svc nginxhello")
     sh("kubectl apply -f setup/hello.yml")
-    sh("kubectl expose deployment nginxhello --type=NodePort --port=80 --target-port=80")
+    sh("kubectl expose deployment nginxhello --type=NodePort --port=8080 --target-port=8080")
     sh("curl http://mycluster.icp:\$(kubectl get svc nginxhello -n default -o jsonpath='{.spec.ports[*].nodePort}')")
 }
