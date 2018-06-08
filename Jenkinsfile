@@ -10,5 +10,5 @@ node {
         customImage.push()
     }
     
-    sh -c "kubectl cluster-info"
+    sh("kubectl cluster-info")
 }
