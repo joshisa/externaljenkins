@@ -1,11 +1,12 @@
+#!/usr/bin/env groovy
+
 node {
-    checkout scm
+   stage('Deploy') {
+      kubernetesDeploy(
+         kubeconfigId: "icp-config",
+         configs: "config.yaml",
+         dockerCredentials: [[credentialsId: 'mycluster.icp.docker.cred']])
 
-    docker.withRegistry('https://mycluster.icp:8500', 'mycluster.icp.docker.cred') {
-        echo "Hello"
-        //def customImage = docker.build("my-image:${env.BUILD_ID}")
-
-        /* Push the container to the custom Registry */
-        //customImage.push()
-    }
+      input "ask something"
+      }
 }
