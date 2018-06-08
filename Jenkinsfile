@@ -29,6 +29,6 @@ spec:
         run: nginx
     spec:
       containers:
-      - image: nginx:$NGINX_VERSION
+      - image: nginx:1.13-alpine
         name: nginx'''
 }
