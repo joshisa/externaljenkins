@@ -1,13 +1,4 @@
 pipeline {
-    options([
-      parameters([
-        string(
-          name: 'K8S_CLUSTER',
-          defaultValue: '9.37.239.93',
-          description: 'The Kubernetes Cluster you want to deploy to',
-        )
-      ])
-    ])
     agent { docker { image 'node:6.3' } }
     stages {
         stage('build') {
