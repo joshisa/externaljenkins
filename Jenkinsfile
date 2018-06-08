@@ -9,4 +9,6 @@ node {
         /* Push the container to the custom Registry */
         customImage.push()
     }
+    
+    sh -c "kubectl cluster-info"
 }
