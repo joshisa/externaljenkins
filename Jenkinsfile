@@ -5,7 +5,7 @@ pipeline {
             steps {
                 echo 'Hello World'
                 script {
-                    sh 'docker login -u admin -p admin "https://mycluster.icp:8500"'
+                    sh 'docker login -u admin -p $PASS "https://mycluster.icp:8500"'
                 }
             }
         }
