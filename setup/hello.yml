@@ -2,19 +2,17 @@ apiVersion: apps/v1beta1
 kind: Deployment
 metadata:
   labels:
-    app: helloworld
-  name: helloworld
+    app: nginxhello
+  name: nginxhello
 spec:
   replicas: 1
   template:
     metadata:
       labels:
-        app: helloworld
-      name: helloworld
+        app: nginxhello
+      name: nginxhello
     spec:
       containers:
-        - name: helloworld
-          image: gcr.io/hightowerlabs/helloworld:0.0.1
+        - name: nginxhello
+          image: mycluster.icp:8500/default/nginxhello:alpine
           imagePullPolicy: Always
-          args:
-            - "-http=127.0.0.1:8080"
