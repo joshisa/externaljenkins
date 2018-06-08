@@ -17,6 +17,6 @@ node {
     sh("kubectl cluster-info")
     sh("kubectl apply -f setup/hello.yml")
     sh("kubectl expose deployment nginxhello --type=NodePort --port=80 --target-port=80")
-    sh("PORT=$(kubectl get svc nginxhello -n default -o jsonpath='{.spec.ports[*].nodePort}')")
+    sh("PORT=\$(kubectl get svc nginxhello -n default -o jsonpath='{.spec.ports[*].nodePort}')")
     sh("curl http://mycluster.icp:${PORT}")
 }
